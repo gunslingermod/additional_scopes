@@ -1,0 +1,100 @@
+model1:loadfromfile(wpn_svd_hud.ogf)
+
+///////////////////////////////////////
+
+// fix for bug with NVSN scope
+// remove buggy mesh
+model1.mesh[]:filterbone(scope2)
+model1:removecollapsedmeshes()
+
+//add normal one
+model2:loadfromfile(nvsn_hud_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model2.mesh2:copy()
+model1.mesh2:paste()
+
+model2.mesh3:copy()
+model1.mesh3:paste()
+
+model1.mesh0:rebind(scope2)
+model1.mesh1:rebind(scope2)
+model1.mesh2:rebind(scope2)
+model1.mesh3:rebind(scope2)
+
+model1.mesh0:move(-0.01541, 0.12251, 0.12502)
+model1.mesh1:move(-0.01541, 0.12251, 0.12502)
+model1.mesh2:move(-0.01541, 0.12251, 0.12502)
+model1.mesh3:move(-0.01541, 0.12251, 0.12502)
+
+model2:unload()
+
+
+///////////////////////////////////////
+
+model2:loadfromfile(pso1as_hud_from_an94.ogf)
+
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model2.mesh2:copy()
+model1.mesh2:paste()
+
+model1.mesh0:rebind(scope6)
+model1.mesh1:rebind(scope6)
+model1.mesh2:rebind(scope6)
+
+model1.mesh0:scale(1.1, 1.1, 1.1)
+model1.mesh1:scale(1.1, 1.1, 1.1)
+model1.mesh2:scale(1.1, 1.1, 1.1)
+
+model1.mesh0:move(0.03718, -0.05288, 0.06012)
+model1.mesh1:move(0.03718, -0.05288, 0.06012)
+model1.mesh2:move(0.03718, -0.05288, 0.06012)
+
+model2:unload()
+
+///////////////////////////////////////
+
+model2:loadfromfile(nvas_hud_from_an94.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model2.mesh2:copy()
+model1.mesh2:paste()
+
+model2.mesh3:copy()
+model1.mesh3:paste()
+
+model1.mesh0:rebind(scope7)
+model1.mesh1:rebind(scope7)
+model1.mesh2:rebind(scope7)
+model1.mesh3:rebind(scope7)
+
+model1.mesh0:scale(1.1, 1.1, 1.1)
+model1.mesh1:scale(1.1, 1.1, 1.1)
+model1.mesh2:scale(1.1, 1.1, 1.1)
+model1.mesh3:scale(1.1, 1.1, 1.1)
+
+
+model1.mesh0:move(0.03718, -0.05028, 0.04337)
+model1.mesh1:move(0.03718, -0.05028, 0.04337)
+model1.mesh2:move(0.03718, -0.05028, 0.04337)
+model1.mesh3:move(0.03718, -0.05028, 0.04337)
+
+///////////////////////////////////////
+
+model1:savetofile(wpn_svd_hud_new.ogf)

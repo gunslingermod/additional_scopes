@@ -1,0 +1,46 @@
+model1:loadfromfile(wpn_svd.ogf)
+
+///////////////////////////////////
+model2:loadfromfile(pso1as_world_from_an94.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:rebind(scope6)
+model1.mesh1:rebind(scope6)
+
+model1.mesh0:move(0.005, -0.103, -0.02)
+model1.mesh1:move(0.005, -0.103, -0.02)
+
+model1.skeleton[bonename:scope1].ikdata:copy()
+model1.skeleton[bonename:scope6].ikdata:paste()
+
+model2:unload()
+
+///////////////////////////////////
+
+model2:loadfromfile(nvas_world_from_an94.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:rebind(scope7)
+model1.mesh1:rebind(scope7)
+
+model1.skeleton[bonename:scope2].ikdata:copy()
+model1.skeleton[bonename:scope7].ikdata:paste()
+
+model1.mesh0:move(0.005, -0.1011, -0.007)
+model1.mesh1:move(0.005, -0.1011, -0.007)
+
+model2:unload()
+
+
+///////////////////////////////////
+model1:savetofile(wpn_svd_new.ogf)
