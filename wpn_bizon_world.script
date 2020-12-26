@@ -1,0 +1,52 @@
+model1:loadfromfile(wpn_bizon.ogf)
+
+///////////////////////////////////
+model2:loadfromfile(pso1sn_world_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:scale(1.05, 1.05, 1.05)
+model1.mesh1:scale(1.05, 1.05, 1.05)
+
+model1.mesh0:rebind(scope4)
+model1.mesh1:rebind(scope6)
+
+model1.mesh0:move(0, 0.114, 0.03)
+model1.mesh1:move(0, 0.114, 0.03)
+
+model1.skeleton[bonename:scope_pso_assault].ikdata:copy()
+model1.skeleton[bonename:scope_pso_sniper].ikdata:paste()
+
+model2:unload()
+
+///////////////////////////////////
+
+model2:loadfromfile(nvsn_world_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:scale(1.1, 1.1, 1.1)
+model1.mesh1:scale(1.1, 1.1, 1.1)
+
+model1.mesh0:rebind(scope7)
+model1.mesh1:rebind(scope7)
+
+model1.skeleton[bonename:scope5].ikdata:copy()
+model1.skeleton[bonename:scope7].ikdata:paste()
+
+model1.mesh0:move(-0.00045, 0.1055, 0.013)
+model1.mesh1:move(-0.00045, 0.1055, 0.013)
+
+model2:unload()
+
+
+///////////////////////////////////
+model1:savetofile(wpn_bizon_new.ogf)
