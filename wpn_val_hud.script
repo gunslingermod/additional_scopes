@@ -1,0 +1,65 @@
+model1:loadfromfile(wpn_val_hud.ogf)
+
+///////////////////////////////////////
+
+model2:loadfromfile(pso1sn_hud_from_svu.ogf)
+
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model2.mesh2:copy()
+model1.mesh2:paste()
+
+model1.mesh0:rebind(scope_pso_sniper)
+model1.mesh1:rebind(scope_pso_sniper)
+model1.mesh2:rebind(scope_pso_sniper)
+
+model1.mesh0:scale(0.95, 0.95, 0.95)
+model1.mesh1:scale(0.95, 0.95, 0.95)
+model1.mesh2:scale(0.95, 0.95, 0.95)
+
+model1.mesh0:move(-0.02032, 0.18647, 0.05895)
+model1.mesh1:move(-0.02032, 0.18647, 0.05895)
+model1.mesh2:move(-0.02032, 0.18647, 0.05895)
+
+model2:unload()
+
+///////////////////////////////////////
+
+model2:loadfromfile(nvsn_hud_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model2.mesh2:copy()
+model1.mesh2:paste()
+
+model2.mesh3:copy()
+model1.mesh3:paste()
+
+model1.mesh0:rebind(scope_nv_sniper)
+model1.mesh1:rebind(scope_nv_sniper)
+model1.mesh2:rebind(scope_nv_sniper)
+model1.mesh3:rebind(scope_nv_sniper)
+
+model1.mesh0:scale(0.95, 0.95, 0.95)
+model1.mesh1:scale(0.95, 0.95, 0.95)
+model1.mesh2:scale(0.95, 0.95, 0.95)
+model1.mesh3:scale(0.95, 0.95, 0.95)
+
+
+model1.mesh0:move(-0.02126, 0.07886, -0.49562)
+model1.mesh1:move(-0.02126, 0.07886, -0.49562)
+model1.mesh2:move(-0.02126, 0.07886, -0.49562)
+model1.mesh3:move(-0.02126, 0.07886, -0.49562)
+
+///////////////////////////////////////
+
+model1:savetofile(wpn_val_hud_new.ogf)

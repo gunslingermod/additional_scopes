@@ -1,0 +1,52 @@
+model1:loadfromfile(wpn_val.ogf)
+
+///////////////////////////////////
+model2:loadfromfile(pso1sn_world_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:scale(1.05, 1.05, 1.05)
+model1.mesh1:scale(1.05, 1.05, 1.05)
+
+model1.mesh0:rebind(scope_pso_sniper)
+model1.mesh1:rebind(scope_pso_sniper)
+
+model1.mesh0:move(0.005, -0.0285, 0.045)
+model1.mesh1:move(0.005, -0.0285, 0.045)
+
+model1.skeleton[bonename:scope_pso_assault].ikdata:copy()
+model1.skeleton[bonename:scope_pso_sniper].ikdata:paste()
+
+model2:unload()
+
+///////////////////////////////////
+
+model2:loadfromfile(nvsn_world_from_svu.ogf)
+
+model2.mesh0:copy()
+model1.mesh0:paste()
+
+model2.mesh1:copy()
+model1.mesh1:paste()
+
+model1.mesh0:scale(1.1, 1.1, 1.1)
+model1.mesh1:scale(1.1, 1.1, 1.1)
+
+model1.mesh0:rebind(scope_nv_sniper)
+model1.mesh1:rebind(scope_nv_sniper)
+
+model1.skeleton[bonename:scope_nv_assault].ikdata:copy()
+model1.skeleton[bonename:scope_nv_sniper].ikdata:paste()
+
+model1.mesh0:move(0.005, -0.03, -0.03)
+model1.mesh1:move(0.005, -0.03, -0.03)
+
+model2:unload()
+
+
+///////////////////////////////////
+model1:savetofile(wpn_val_new.ogf)
